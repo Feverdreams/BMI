@@ -563,6 +563,7 @@ class BaseClassifier(object):
             Authentication decision for each input sample.
 
         """
+
         # check train state
         if not self.is_trained:
             raise UntrainedError
@@ -1135,7 +1136,7 @@ class KNN(BaseClassifier):
         return {'dists': dists, 'train_labels': train_labels}
 
     def _update(self, old, new):
-        """C  ombine new data with existing templates (for one subject).
+        """Combine new data with existing templates (for one subject).
 
         Simply concatenates old data with new data.
 
@@ -1271,7 +1272,7 @@ class SVM(BaseClassifier):
             Class label.
 
         """
-        .05
+
         clf = sksvm.OneClassSVM(kernel='rbf', nu=0.1)
         clf.fit(X)
 
