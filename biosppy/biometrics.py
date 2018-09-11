@@ -68,7 +68,7 @@ class BaseClassifier(object):
     This class is a skeleton for actual classifier classes.
     The following methods must be overridden or adapted to build a
     new classifier:
-    
+
     * __init__
     * _authenticate
     * _get_thresholds
@@ -241,6 +241,11 @@ class BaseClassifier(object):
             return subject in self._subject2label
 
         return False
+
+    def Enrolled_num(self):                                                #Here I inserted a function of checking how many pairs of elements are in dictory. Thus have a hint of how many subjects enrolled
+        num =len(list(self._subject2label))
+
+        return num
 
     def list_subjects(self):
         """List all the enrolled subjects.
@@ -1728,7 +1733,7 @@ def get_auth_rates(TP=None, FP=None, TN=None, FN=None, thresholds=None):
     NPV = TN / D # negative predictive value
     FOR = FN / D # false omission rate
 
-    MCC = (TP*TN - FP*FN) / np.sqrt(E) # matthews correlation coefficient 
+    MCC = (TP*TN - FP*FN) / np.sqrt(E) # matthews correlation coefficient
 
     # determine EER
     roots, values = tools.find_intersection(thresholds, FAR, thresholds, FRR)
@@ -2243,7 +2248,7 @@ def combination(results=None, weights=None):
     args = (decision, confidence, counts, unq)
     names = ('decision', 'confidence', 'counts', 'classes')
 
-    return utils.ReturnTuple(args, names)
+    return utils.ReturnTuple(ar gs, names)
 
 
 def majority_rule(labels=None, random=True):
