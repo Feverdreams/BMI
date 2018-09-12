@@ -2248,7 +2248,7 @@ def combination(results=None, weights=None):
     args = (decision, confidence, counts, unq)
     names = ('decision', 'confidence', 'counts', 'classes')
 
-    return utils.ReturnTuple(ar gs, names)
+    return utils.ReturnTuple(args, names)
 
 
 def majority_rule(labels=None, random=True):
